@@ -1,9 +1,11 @@
 import datetime
 
 
-def is_working_day(date) -> bool:
-
-    return True
+def is_working_day(date: datetime.date) -> bool:
+    if date.weekday() < 5:
+        return True
+    else:
+        return False
 
 
 def main():
@@ -12,4 +14,4 @@ def main():
 
 if __name__ == "__main__":
     now = datetime.date.today()
-    print(now)
+    print(is_working_day(now))
